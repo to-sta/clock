@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Timer, Play, Pause } from 'lucide-svelte';
+	import { Timer, Play, Pause, RotateCcw } from 'lucide-svelte';
 	import { Input } from '$lib/components/ui/input';
 	import { Fireworks, type FireworksOptions } from '@fireworks-js/svelte';
 
@@ -123,7 +123,11 @@
 			onclick={() => startTimer(false, true)}
 			class="shadow-lg p-2 rounded-full bg-black text-white hover:bg-slate-800"
 		>
-			<Timer class="h-5 w-5" />
+			{#if timerStarted}
+				<RotateCcw class="h-5 w-5" />
+			{:else}
+				<Timer class="h-5 w-5" />
+			{/if}
 		</button>
 	</div>
 	<div class="p-4 flex items-center w-full h-full">
@@ -143,7 +147,9 @@
 						play = !play;
 						startTimer(play);
 					}}
-					class="p-2 rounded-full bg-black text-white hover:bg-slate-800  {timerStarted ? '' : 'invisible'}"
+					class="p-2 rounded-full bg-black text-white hover:bg-slate-800 {timerStarted
+						? ''
+						: 'invisible'}"
 				>
 					{#if play}
 						<Play class="h-5 w-5" />

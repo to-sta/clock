@@ -1,10 +1,10 @@
 # Clock/Timer
-<div style="text-align: center;">
+<p align="center">
     <img src="docs/app_image.png">
-</div>
+</p>
 
 ## About
-Simple Clock/Timer with a firework if the timer expired :fireworks:. 
+Simple desktop Clock with a timer function, that stays in the foreground. If the timer expired a small :fireworks: starts. 
 
 ## Live Development
 
